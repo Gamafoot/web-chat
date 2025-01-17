@@ -1,0 +1,16 @@
+listen:
+  port: 8000
+
+database:
+  url: postgres://postgres:pass@postgres:5432/chat
+
+hash:
+  salt: cy@$N8f2r\g{3@)rj52
+
+auth:
+  secret_key: o!5(U0Ixnln~p9?V|ad(^!J#sygxbECrgHg#K<-
+
+cors:
+  origins:
+    - http://127.0.0.1:8000
+    - http://localhost:8000

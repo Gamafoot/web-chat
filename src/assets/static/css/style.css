@@ -1,0 +1,25 @@
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80vh;
+    padding-top: 100px;
+}
+#menu .btn {
+    width: 250px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+#chatNameInput {
+    width: 250px;
+    margin-bottom: 10px;
+}
+#leaveChatBtn {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+.info-content {
+    display: flex;
+    flex-direction: column;
+}
