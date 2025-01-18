@@ -18,10 +18,6 @@ func NewUserStorage(db *gorm.DB) *userStorage {
 func (s *userStorage) GetByID(userID int) (*domain.User, error) {
 	user := new(domain.User)
 	if err := s.db.First(&user, "id = ?", userID).Error; err != nil {
-		if pkgErrors.Is(err, gorm.ErrRecordNotFound) {
-			return nil, domain.ErrRecordNotFound
-		}
-
 		return nil, pkgErrors.WithStack(err)
 	}
 	return user, nil
@@ -30,10 +26,6 @@ func (s *userStorage) GetByID(userID int) (*domain.User, error) {
 func (s *userStorage) GetByLogin(login string) (*domain.User, error) {
 	user := new(domain.User)
 	if err := s.db.First(&user, "login = ?", login).Error; err != nil {
-		if pkgErrors.Is(err, gorm.ErrRecordNotFound) {
-			return nil, domain.ErrRecordNotFound
-		}
-
 		return nil, pkgErrors.WithStack(err)
 	}
 	return user, nil
